@@ -1,0 +1,62 @@
+.list-wrapper form {
+    max-width: 600px;
+    margin: 0px auto;
+}
+.time-form-row .input-row {
+    display: flex;
+    gap: 20px;
+}
+.time-form-row .form-row {
+    flex-basis: 300px;
+}
+.tooltip-label {
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+}
+.tooltip-label label {
+    margin-bottom: 0px;
+    text-wrap: nowrap;
+}
+.tooltip {
+    padding: 0px 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.tooltip-mark {
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 650px) {
+    .time-form-row .input-row {
+        display: block;
+    }
+    .tooltip-label {
+        display: block;
+    }
+    .tooltip {
+        position: relative;
+        display: block;
+        height: 15px;
+        padding: 0px;
+    }
+}

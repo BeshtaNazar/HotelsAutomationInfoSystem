@@ -1,0 +1,79 @@
+.slider-container {
+    background-color: #dfdfdf;
+    position: relative;
+    max-width: 900px;
+    height: 500px;
+    margin: 0px auto 40px auto;
+    overflow: hidden;
+}
+.slider {
+    display: flex;
+}
+.slider-container img {
+    flex: 1 0 900px;
+    height: 500px;
+    transition: all 1s ease-in-out;
+}
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    background-color: #21212199;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.slider-container .prev {
+    left: 0;
+}
+
+.slider-container .next {
+    right: 0;
+}
+.hotel-features {
+    max-width: 900px;
+    margin: 0px auto;
+}
+.section-title {
+    color: #333333;
+    text-align: center;
+    text-transform: uppercase;
+}
+.hotel-features ul li {
+    list-style-type: disc;
+    width: 45%;
+    float: left;
+    padding: 10px;
+}
+.hotel-features ul {
+    padding: 10px 0px 0px 20px;
+    margin-bottom: 100px;
+}
+.actions {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.decline-form {
+    display: block;
+    width: 50%;
+}
+.decline-form button {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+.change-link {
+    display: block;
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    border-radius: 0px;
+}

@@ -1,0 +1,14 @@
+.hotel-actions {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.preview-link {
+    padding: 5px 15px;
+    background-color: #2a8eab;
+    color: #fff;
+    border-radius: 10px;
+}
+.preview-link:hover {
+    background-color: #1c6175;
+}

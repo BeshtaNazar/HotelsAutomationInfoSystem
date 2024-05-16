@@ -1,0 +1,59 @@
+.profile-wrapper {
+    margin: 30px 10px;
+}
+.current-data {
+    display: block;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+.profile-wrapper .container form {
+    max-width: 600px;
+    margin: 0px auto;
+}
+.birthday-form-row .current-data {
+    color: #584848;
+}
+.change-password-row .row {
+    margin-bottom: 30px;
+}
+.profile-wrapper .container > .row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.nav-col {
+    width: 150px;
+}
+.nav-col ul > li {
+    margin-bottom: 40px;
+}
+.nav-col ul > li:last-child {
+    margin-bottom: 0px;
+}
+.nav-col ul > li a {
+    display: block;
+    padding: 10px 40px;
+    background-color: #00c47d;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+}
+.nav-col ul > li a:hover {
+    background-color: #008655;
+}
+.nav-col ul > li a:active {
+    background-color: #00ffa2;
+}
+.profile-wrapper .container > .row > .col {
+    padding: 10px;
+}
+@media (max-width: 780px) {
+    .profile-wrapper .container > .row {
+        flex-direction: column;
+    }
+    .nav-col {
+        width: 100%;
+    }
+}

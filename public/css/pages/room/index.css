@@ -1,0 +1,17 @@
+.hotel-page .nav {
+    margin-bottom: 40px;
+}
+.rooms-col {
+    max-width: 900px;
+    margin: 0px auto;
+}
+.list-row .row:last-child {
+    margin-bottom: 0px;
+}
+.available-rooms-form {
+    display: flex;
+    justify-content: space-between;
+}
+.available-rooms-form input {
+    display: block;
+}

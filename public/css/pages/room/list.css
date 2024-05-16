@@ -1,0 +1,6 @@
+.list-rooms-wrapper .container {
+    max-width: 500px;
+}
+.list-rooms-wrapper form {
+    display: inline-block;
+}

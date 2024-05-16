@@ -1,0 +1,26 @@
+.table-row {
+    display: flex;
+    gap: 10px;
+}
+.table-col {
+    flex-basis: 100%;
+}
+.beds-col {
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    background-color: #f5f4f4;
+}
+.beds-col label {
+    letter-spacing: 2px;
+    text-transform: none;
+    display: inline-block;
+}
+.beds-col input {
+    display: inline-block;
+    width: 100px;
+}
+.beds-col .row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}

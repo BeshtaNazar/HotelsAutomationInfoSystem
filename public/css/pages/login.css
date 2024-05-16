@@ -1,0 +1,69 @@
+.login-wrapper {
+    padding: 40px;
+    line-height: 1.5em;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.login-wrapper .container .row .col {
+    width: 50%;
+    padding: 0px 10px;
+}
+.login-wrapper form {
+    max-width: 350px;
+    margin: 0px auto 20px auto;
+}
+
+.forgot-password-link {
+    display: inline-block;
+    letter-spacing: 2px;
+    color: #584848;
+}
+.forgot-password-link:hover {
+    color: #1e3524;
+}
+.forgot-password-link:active {
+    color: #6cbf81;
+}
+.password-input-container input {
+    padding-right: 50px;
+}
+.no-account-title {
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.no-account {
+    max-width: 350px;
+    margin: 0px auto;
+}
+.create-account-link {
+    display: inline-block;
+    text-transform: uppercase;
+    border: 1px solid #00c26c;
+    color: #00c26c;
+    padding: 15px;
+    border-radius: 5px;
+}
+.create-account-link:hover {
+    background-color: #c7fde6;
+}
+.create-account-link:active {
+    color: #ffff;
+    background-color: #00c26c;
+}
+.checkbox-row label {
+    display: inline;
+    padding-left: 4px;
+    text-transform: none;
+}
+.checkbox-row input {
+    width: auto;
+}
+@media (max-width: 767.98px) {
+    .login-wrapper .container .row .col {
+        width: 100%;
+    }
+}

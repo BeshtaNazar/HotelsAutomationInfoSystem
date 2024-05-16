@@ -1,0 +1,7 @@
+.list-hotels-wrapper .container {
+    max-width: 400px;
+}
+
+.list-hotels-wrapper form {
+    display: inline-block;
+}
