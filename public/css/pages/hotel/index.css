@@ -53,7 +53,7 @@
     padding: 10px 0px 0px 20px;
     margin-bottom: 100px;
 }
-.actions {
+.admin-actions {
     display: flex;
     position: sticky;
     bottom: 0;

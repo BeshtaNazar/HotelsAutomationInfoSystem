@@ -1,1 +1,4 @@
-
+.inactive-hotel-actions {
+    display: flex;
+    align-items: center;
+}

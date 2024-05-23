@@ -1,0 +1,20 @@
+.expiration-form-row .form-row {
+    width: 200px;
+}
+.expiration-form-row .row {
+    display: flex;
+    justify-content: space-between;
+}
+.row-title {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+#makeReservationForm {
+    background-color: #e1e0de;
+    padding: 40px 40px 10px;
+    max-width: 600px;
+}
+.form-row textarea {
+    display: block;
+    width: 100%;
+}

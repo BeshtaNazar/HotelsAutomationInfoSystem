@@ -14,8 +14,9 @@
 <body>
     @include('include.header')
     @yield('content')
-    @yield('script')
     <script src={{ asset('js/header/burgerMenuHandling.js') }}></script>
+    <script src={{ asset('js/global.js') }}></script>
+    @yield('script')
 </body>
 
 </html>

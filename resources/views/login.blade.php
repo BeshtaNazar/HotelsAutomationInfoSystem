@@ -39,8 +39,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <a class="forgot-password-link" href="password-restore">Forgot password?</a>
-
+                            <a class="forgot-password-link" href="{{ route('forgot.password.view') }}">Forgot password?</a>
                         </div>
                         <div class="form-row checkbox-row">
                             <input type="checkbox" name="remember" id="remember">
@@ -59,9 +58,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 @endsection
 @section('script')
     <script src="{{ asset('js/togglePassword.js') }}"></script>

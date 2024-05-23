@@ -1,7 +1,7 @@
 @extends('components.layout')
 @section('title', 'Profile | Hotels Automation')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/pages/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/account/profile.css') }}">
 @endsection
 @section('content')
     <div class="profile-wrapper">
@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col nav-col">
                     <ul>
+                        <li><a href={{ route('account.reservations') }}>Reservations</a></li>
                         <li><a href={{ route('hotel.manage') }}>Manage your hotels</a></li>
                         @if ($isAdmin)
                             <li><a href={{ route('hotel.requests') }}>Manage hotels requests</a></li>

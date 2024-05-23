@@ -8,8 +8,8 @@
         <img src="/images/app/home-image.jpg"" alt="">
     </div>
     <div class="home-wrapper">
-        <div class="home-search-property-bar">
-            <form action="/search-result" method="GET" autocomplete="off">
+        <div class="search-property-bar">
+            <form action="{{ route('search.result') }}" method="GET" autocomplete="off">
                 <div class="search-details">
                     <div class="col col-location">
                         <label for="location">Hotel, city or country</label>
@@ -18,11 +18,11 @@
                     <div class="col col-date-pickers">
                         <div class="col col-checkin">
                             <label for="checkin">Check-in</label>
-                            <input type="date" required name="checkin" class="form-input">
+                            <input type="date" required name="checkIn" class="form-input">
                         </div>
                         <div class="col col-checkout">
                             <label for="checkout">Check-out</label>
-                            <input type="date" required name="checkout" class="form-input">
+                            <input type="date" required name="checkOut" class="form-input">
                         </div>
                     </div>
                     <div class="col col-select">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col col-select col-guests">
                         <label for="adults">Adults</label>
-                        <select name="adults" id="adultSelect" class="custom-select">
+                        <select name="rooms[0][adults]" id="adultSelect" class="custom-select">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col col-select col-guests">
                         <label for="children">Children</label>
-                        <select name="children" id="childrenSelect" class="custom-select">
+                        <select name="rooms[0][children]" id="childrenSelect" class="custom-select">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -70,38 +70,6 @@
                 <div class="room-list" id="roomList" style="height: 0px">
                     <hr>
                     <span>
-                        <div class="room-info-group">
-                            <div class="room-list-row">
-                                <div class="col col-room-name">
-                                    <label>Room: 1</label>
-                                </div>
-                                <div class="col col-adults">
-                                    <label for="adults1">Adults:</label>
-                                    <select id="adults1" name="adults1" class="custom-select">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                    </select>
-                                </div>
-                                <div class="col col-children">
-                                    <label for="children1">Children:</label>
-                                    <select id="children1" name="children1" class="custom-select">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                     </span>
                     <div class="room-list-row">
                         <div class="col col-button">

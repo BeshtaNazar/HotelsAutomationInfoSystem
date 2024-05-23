@@ -1,6 +1,21 @@
 .list-rooms-wrapper .container {
-    max-width: 500px;
+    max-width: 900px;
 }
 .list-rooms-wrapper form {
     display: inline-block;
+}
+.row-room-type {
+    padding: 0px 5px;
+}
+.row-info {
+    margin-bottom: 10px;
+}
+.rooms-links {
+    position: sticky;
+    bottom: 5px;
+    background-color: #00634e;
+    padding: 10px;
+    max-width: 300px;
+    border-radius: 5px;
+    margin: 0px auto;
 }

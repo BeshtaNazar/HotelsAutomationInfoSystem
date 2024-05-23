@@ -153,7 +153,7 @@
                     <span id="ibanError" class="error-message"></span>
                 </div>
                 <div class="form-row list-hotel-submit-button">
-                    <button class="submit-button" type="submit">Continue</button>
+                    <button class="submit-button" type="submit">{{ $isActive ? 'Update' : 'Continue' }}</button>
                 </div>
             </form>
         </div>

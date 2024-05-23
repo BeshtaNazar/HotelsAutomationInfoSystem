@@ -17,8 +17,12 @@ class User extends Authenticatable
         'country',
         'password',
     ];
-    public function getUserHotels()
+    public function hotels()
     {
         return $this->hasMany(Hotel::class, 'user_id');
+    }
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class, 'user_id');
     }
 }

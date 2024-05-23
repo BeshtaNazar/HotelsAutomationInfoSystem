@@ -10,8 +10,9 @@
                 @else
                     <li><a href="/login">Log in</a></li>
                 @endif
-                <li class="cart-title"><a href="/shopping-cart">Shopping cart</a></li>
-                <li class="cart-icon"><a href="/shopping-cart" class="_icon-cart"></a></li>
+                <li class="cart-title"><a href="{{ route('cart') }}">Shopping cart</a></li>
+                <li class="cart-icon"><a href="{{ route('cart') }}" class="cart-link _icon-cart"><span
+                            class="cart-indicator hidden"></span></a></li>
             </ul>
         </nav>
         <div class="burger-menu">

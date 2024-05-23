@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Models\Room;
 use App\Models\Hotel;
 use App\Enums\UserRole;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class RoomOwnershipMiddleware
     public function handle(Request $request, Closure $next): Response
     {
 
-        $room = $request->route()->parameter('room');
+        $room = Room::find($request->route()->parameter('room'))->first();
         $hotel = Hotel::find($room->hotel_id);
         if ($hotel->user_id !== Auth::user()->id && Auth::user()->role != UserRole::ADMIN->value) {
             return redirect()->back();

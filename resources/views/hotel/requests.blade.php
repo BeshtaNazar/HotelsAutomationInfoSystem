@@ -19,7 +19,7 @@
                         <div>
                             <div class="row row-hotel-media">
                                 @foreach ($inactiveHotel->getMedia('hotels_images') as $image)
-                                    <img src="{{ $image->getUrl() }}" alt="{{ $image->name }}">
+                                    <img src="{{ $image->getAvailableUrl(['preview']) }}" alt="{{ $image->name }}">
                                 @endforeach
                             </div>
                             <div class="row row-hotel-name">
@@ -27,7 +27,7 @@
                             </div>
                             <div class="row-info">
                                 <div class="col">
-                                    Room count : {{ $inactiveHotel->getHotelRooms()->count() }}
+                                    Room count : {{ $inactiveHotel->rooms()->count() }}
                                 </div>
                                 <div class="col">
                                     Children : @if ($inactiveHotel->are_children_allowed)
@@ -62,11 +62,29 @@
                                     IBAN : {{ $inactiveHotel->iban }}
                                 </div>
                             </div>
+                            <div class="user-info">
+                                <div class="row-title">User info:</div>
+                                <div class="row-info">
+                                    <div class="col">
+                                        First name : {{ $inactiveHotel->user->first_name }}
+                                    </div>
+                                    <div class="col">
+                                        Last name : {{ $inactiveHotel->user->last_name }}
+                                    </div>
+                                    <div class="col">
+                                        Phone : {{ $inactiveHotel->user->phone }}
+                                    </div>
+                                    <div class="col">
+                                        Email : {{ $inactiveHotel->user->email }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="hotel-actions">
                             <a href="{{ route('hotel.preview', ['hotelName' => $inactiveHotel->name]) }}"
                                 class="preview-link">Preview</a>
-                            <a href="{{ '' }}" class="change-link">Approve</a>
+                            <a href="{{ route('hotel.approve', ['hotelName' => $inactiveHotel->name]) }}"
+                                class="change-link">Approve</a>
                             <form action="{{ route('hotel.delete', ['hotel' => $inactiveHotel->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -75,6 +93,10 @@
                         </div>
                     </div>
                 @endforeach
+            @else
+                <div class="not-found-message">
+                    There are no requests
+                </div>
             @endif
         </div>
     </div>

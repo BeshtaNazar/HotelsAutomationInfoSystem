@@ -1,8 +1,3 @@
-.hotel-actions {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
 .preview-link {
     padding: 5px 15px;
     background-color: #2a8eab;
@@ -11,4 +6,16 @@
 }
 .preview-link:hover {
     background-color: #1c6175;
+}
+.row-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+}
+.row-info {
+    margin-bottom: 20px;
+}
+.user-info .row-info {
+    margin-bottom: 0px;
 }

@@ -1,0 +1,8 @@
+.password-req ul li {
+    float: none;
+    width: 100%;
+}
+.error-message {
+    display: block;
+    margin-bottom: 10px;
+}

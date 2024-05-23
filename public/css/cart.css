@@ -1,0 +1,50 @@
+.cart-wrapper .container {
+    max-width: 500px;
+}
+.unreserve-btn {
+    width: 150px;
+    z-index: 26;
+}
+.list-row {
+    position: relative;
+    transition: all 0.2s ease-in;
+    overflow: hidden;
+}
+.unavailable-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 20;
+    opacity: 0.6;
+}
+.unavailable-text {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 22;
+    text-align: center;
+}
+.total-price,
+.total-price span {
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ececec;
+}
+.submit-cart {
+    background-color: #cd9f43;
+    padding: 10px;
+    position: sticky;
+    bottom: 4px;
+    z-index: 50;
+    border-radius: 6px;
+}

@@ -24,8 +24,12 @@ class Hotel extends Model implements HasMedia
     {
         $this->addMediaCollection('hotels_images');
     }
-    public function getHotelRooms()
+    public function rooms()
     {
         return $this->hasMany(Room::class, 'hotel_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

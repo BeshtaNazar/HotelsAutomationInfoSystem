@@ -142,7 +142,7 @@ label {
 .custom-select {
     display: block;
     width: 100%;
-    height: 25px;
+    height: 40px;
     padding: 3px 5px 3px 10px;
     appearance: none;
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg width='800px' height='800px' viewBox='0 -4.5 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Earrow_down %5B%23339%5D%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Dribbble-Light-Preview' transform='translate(-180.000000, -6684.000000)' fill='%23000000'%3E%3Cg id='icons' transform='translate(56.000000, 160.000000)'%3E%3Cpath d='M144,6525.39 L142.594,6524 L133.987,6532.261 L133.069,6531.38 L133.074,6531.385 L125.427,6524.045 L124,6525.414 C126.113,6527.443 132.014,6533.107 133.987,6535 C135.453,6533.594 134.024,6534.965 144,6525.39' id='arrow_down-%5B%23339%5D'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -151,7 +151,6 @@ label {
     background-position: right;
     background-origin: content-box;
     border: 1px solid #909090;
-    height: 35px;
 }
 
 .form-row {
@@ -332,6 +331,7 @@ form {
     color: #fff;
     border-radius: 10px;
     background-color: #009b4e;
+    text-align: center;
 }
 .delete-button {
     border-radius: 10px;
@@ -363,10 +363,6 @@ form {
 .row-hotel-media img {
     width: 125px;
     height: 100px;
-}
-.hotel-actions {
-    display: flex;
-    align-items: center;
 }
 .row-info {
     display: flex;
@@ -438,6 +434,213 @@ form {
 
 .hotel-page .nav li.active {
     border-bottom: 5px solid #000000;
+}
+.actions,
+.hotel-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.actions form {
+    width: 100%;
+}
+.actions form button {
+    width: 100%;
+}
+.search-property-bar {
+    position: absolute;
+    max-width: 960px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    background-color: rgba(180, 191, 129, 0.96);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.search-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+.search-property-bar input:focus {
+    border-color: rgb(6, 1, 93);
+}
+.form-input {
+    display: block;
+    width: 100%;
+    height: 25px;
+    padding: 3px 10px;
+    border: 1px solid white;
+}
+
+.search-property-bar .col {
+    max-width: 100%;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+.col-location {
+    min-width: 215px;
+    padding-left: 10px;
+}
+.col-date-pickers {
+    display: flex;
+    padding-left: 0px;
+    min-width: 290px;
+}
+.col-checkin {
+    width: 50%;
+}
+.col-checkout {
+    width: 50%;
+}
+
+.col-select {
+    min-width: 85px;
+}
+.submit-prop-search-btn {
+    min-height: 55px;
+    width: 100%;
+    color: white;
+    background-color: rgb(0, 155, 70);
+    transition: all 0.06s ease-in-out;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+.submit-prop-search-btn:hover {
+    background-color: rgb(0, 73, 33);
+}
+.submit-prop-search-btn:active {
+    background-color: rgb(147, 147, 147);
+}
+.search-property-bar .col.col-button {
+    min-width: 190px;
+    min-height: 55px;
+}
+
+.col-guests input {
+    cursor: default;
+    border: none;
+}
+.room-list {
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.search-property-bar .room-list hr {
+    margin: 10px 0px;
+    border-top: 1px solid rgba(66, 66, 66, 0.665);
+    box-sizing: content-box;
+}
+.room-list-row {
+    display: flex;
+}
+.search-property-bar .room-list .col.col-button {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.close-room-list-button {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.close-room-list-button:hover {
+    background-color: rgb(124, 0, 0);
+}
+
+.search-property-bar .room-list .room-info-group .col {
+    max-width: 15%;
+}
+.room-info-group {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+.search-property-bar form {
+    max-width: fit-content;
+    margin: 0;
+}
+.reserve-link {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    background-color: #6585b0;
+    border-radius: 4px;
+}
+.reserve-link:hover {
+    background-color: #334358;
+}
+.cart-link {
+    position: relative;
+}
+.cart-indicator {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: translate(80%, -60%);
+}
+.unreserve-btn {
+    padding: 20px;
+    color: #fff;
+    background-color: #732325;
+    border-radius: 4px;
+}
+.unreserve-btn:hover {
+    background-color: #331011;
+}
+.not-found-message {
+    font-size: 30px;
+    text-align: center;
+}
+.hidden {
+    display: none !important;
+}
+@media (max-width: 963.98px) {
+    .search-details {
+        display: block;
+    }
+    .search-property-bar form {
+        max-width: 100%;
+    }
+    .search-property-bar {
+        width: 100%;
+        background-color: rgb(180, 191, 129);
+        padding: 30px 20px;
+    }
+    .search-property-bar .search-details .col {
+        padding-right: 0px;
+        margin-bottom: 20px;
+    }
+    .search-property-bar .search-details .col.col-button {
+        margin-bottom: 0px;
+    }
+    .search-property-bar .search-details .col.col-checkin {
+        padding-right: 10px;
+        margin-bottom: 0px;
+    }
+    .search-property-bar .search-details .col.col-checkout {
+        margin-bottom: 0px;
+    }
+    .col-location {
+        padding-left: 0px;
+    }
+    .search-property-bar .room-list .room-info-group .col {
+        min-width: 100px;
+    }
+    .room-list-row {
+        justify-content: space-between;
+    }
 }
 @media (max-width: 767.98px) {
     .burger-menu {

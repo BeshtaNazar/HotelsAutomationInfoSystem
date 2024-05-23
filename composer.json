@@ -12,11 +12,13 @@
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "monarobase/country-list": "^3.5",
+        "nesbot/carbon": "^3.3",
         "psr/simple-cache": "^3.0",
         "spatie/laravel-medialibrary": "^11.4",
         "symfony/var-dumper": "^7.0"
     },
     "require-dev": {
+        "andyabih/laravel-to-uml": "^1.0",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",

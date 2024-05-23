@@ -26,8 +26,7 @@
                             @method('DELETE')
                             <button type="submit" class="delete-button">Delete</button>
                         </form>
-                        <a href="{{ route('hotel.edit.new', ['hotelName' => $hotel->name]) }}"
-                            class="change-link">Continue</a>
+                        <a href="{{ route('hotel.edit', ['hotelName' => $hotel->name]) }}" class="change-link">Continue</a>
                     </div>
                 </div>
             @endforeach

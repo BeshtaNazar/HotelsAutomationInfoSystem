@@ -52,6 +52,18 @@ function getChildrenNum() {
 }
 function createRoomDiv(roomIndex) {
     let div = document.createElement("div");
+    let selectedAdultsValue = document.getElementById(
+        `rooms[${roomIndex - 1}][adults]`
+    );
+    let selectedChildrenValue = document.getElementById(
+        `rooms[${roomIndex - 1}][children]`
+    );
+    selectedAdultsValue === null
+        ? (selectedAdultsValue = 1)
+        : (selectedAdultsValue = selectedAdultsValue.value);
+    selectedChildrenValue === null
+        ? (selectedChildrenValue = 0)
+        : (selectedChildrenValue = selectedChildrenValue.value);
     div.className = "room-info-group";
     div.innerHTML = `
 <div class="room-list-row">
@@ -60,7 +72,9 @@ function createRoomDiv(roomIndex) {
     </div>
     <div class="col col-adults">
         <label for="adults${roomIndex}">Adults:</label>
-        <select id="adults${roomIndex}" name="adults${roomIndex}" class="custom-select">
+        <select id="adults${roomIndex}" name="rooms[${
+        roomIndex - 1
+    }][adults]" class="custom-select">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -72,7 +86,9 @@ function createRoomDiv(roomIndex) {
     </div>
     <div class="col col-children">
         <label for="children${roomIndex}">Children:</label>
-        <select id="children${roomIndex}" name="children${roomIndex}" class="custom-select">
+        <select id="children${roomIndex}" name="rooms[${
+        roomIndex - 1
+    }][children]" class="custom-select">
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -84,21 +100,21 @@ function createRoomDiv(roomIndex) {
         </select>
     </div>
 `;
-
-    div.querySelector(`#adults${roomIndex}`).addEventListener("change", () => {
+    const adultsSelect = div.querySelector(`#adults${roomIndex}`);
+    const childrenSelect = div.querySelector(`#children${roomIndex}`);
+    adultsSelect.value = selectedAdultsValue;
+    childrenSelect.value = selectedChildrenValue;
+    adultsSelect.addEventListener("change", () => {
         adultNumElem.value = getAdultsNum();
     });
-    div.querySelector(`#children${roomIndex}`).addEventListener(
-        "change",
-        () => {
-            childrenNumElem.value = getChildrenNum();
-        }
-    );
+    childrenSelect.addEventListener("change", () => {
+        childrenNumElem.value = getChildrenNum();
+    });
 
     return div;
 }
-let roomListHeight = getRoomListHeight();
-roomSelect.addEventListener("change", () => {
+
+function alterRoomList() {
     const roomSelectedValue = roomSelect.value;
     if (roomSelectedValue > 1) {
         if (adultNumElem.style.display == "none") {
@@ -126,17 +142,14 @@ roomSelect.addEventListener("change", () => {
         roomListLength--;
     }
     adultNumElem.value = getAdultsNum();
+    childrenNumElem.value = getChildrenNum();
     roomListHeight = getRoomListHeight();
     if (roomSelectedValue == 1) closeRoomList();
     else if (roomList.style.height != "0px") showRoomList();
-});
-
+}
+let roomListHeight = getRoomListHeight();
+document.addEventListener("DOMContentLoaded", alterRoomList);
+roomSelect.addEventListener("change", alterRoomList);
 childrenNumElem.addEventListener("click", showRoomList);
 adultNumElem.addEventListener("click", showRoomList);
 closeRoomListButton.addEventListener("click", closeRoomList);
-document.getElementById("adults1").addEventListener("change", () => {
-    adultNumElem.value = getAdultsNum();
-});
-document.getElementById("children1").addEventListener("change", () => {
-    childrenNumElem.value = getChildrenNum();
-});

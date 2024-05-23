@@ -9,13 +9,17 @@
             <div class="hotel-page">
                 <div class="hotel-header">
                     <div class="hotel-title">
-                        <h2>{{ $hotel->name . ' Hotel' }}</h2>
+                        <h2>{{ $hotel->name }}</h2>
                         <span>{{ $hotel->building_number . ' ' . $hotel->street . ',' . $hotel->city }}</span>
                     </div>
                 </div>
                 <ul class="nav">
-                    <li class="active"><a href="{{ route('hotel.preview', ['hotelName' => $hotel->name]) }}">Overview</a></li>
-                    <li><a href="{{ route('rooms.preview', ['hotelName' => $hotel->name]) }}">Rooms</a></li>
+                    <li class="active"><a
+                            href="{{ $isPreview ? route('hotel.preview', ['hotelName' => $hotel->name]) : route('hotel.show', ['hotelName' => $hotel->name]) }}">Overview</a>
+                    </li>
+                    <li><a
+                            href="{{ $isPreview ? route('rooms.preview', ['hotelName' => $hotel->name]) : route('rooms.show', ['hotelName' => $hotel->name]) }}">Rooms</a>
+                    </li>
                 </ul>
                 <div class="slider-container">
                     <div class="slider">
@@ -29,21 +33,24 @@
                 <div class="hotel-features">
                     <div class="section-title">Features</div>
                     <ul>
-                        <li>Total rooms : {{ $hotel->getHotelRooms()->count() }}</li>
+                        <li>Total rooms :
+                            {{ $hotel->rooms()->where('status', App\Enums\RoomStatus::ACTIVE->value)->count() }}</li>
                         <li>Children are {{ $hotel->are_children_allowed == 0 ? ' not allowed' : 'allowed' }}</li>
                         <li>Pets are {{ $hotel->are_pets_allowed == 0 ? ' not allowed' : 'allowed' }}</li>
                     </ul>
                 </div>
             </div>
-            <div class="actions">
-                <a href="{{ '' }}" class="change-link">Approve</a>
-                <form class="decline-form" action="{{ route('hotel.delete', ['hotel' => $hotel->id]) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="delete-button">Decline</button>
-                </form>
-            </div>
-            {{-- <button @class(['disabled' => $isPreview])>ADD</button> --}}
+            @if ($isPreview && $isAdmin)
+                <div class="admin-actions">
+                    <a href="{{ route('hotel.approve', ['hotelName' => $hotel->name]) }}" class="change-link">Approve</a>
+                    <form class="decline-form" action="{{ route('hotel.delete', ['hotel' => $hotel->id]) }}"
+                        method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-button">Decline</button>
+                    </form>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

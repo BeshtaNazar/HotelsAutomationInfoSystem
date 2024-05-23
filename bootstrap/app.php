@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\HotelActiveMiddleware;
+use App\Http\Middleware\ReservationOwnershipMiddleware;
 use App\Http\Middleware\RoomOwnershipMiddleware;
 use Illuminate\Foundation\Application;
 use App\Http\Middleware\UserMiddleware;
@@ -26,6 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
             "admin" => AdminMiddleware::class,
             "hotelActive" => HotelActiveMiddleware::class,
             "roomOwnership" => RoomOwnershipMiddleware::class,
+            "reservationOwnership" => ReservationOwnershipMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
